@@ -23,6 +23,8 @@ class SecurityConfig {
             .authorizeHttpRequests { auth -> auth
                 .requestMatchers("rutas_protegidas/**").authenticated()
                 .requestMatchers("rutas_publicas/**").permitAll()
+                .requestMatchers("secretos/magia_negra").authenticated()
+                .requestMatchers("secretos/magia_blanca").permitAll()
                 .anyRequest().authenticated()
             } // Los recursos protegidos y publicos
             .sessionManagement { session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
@@ -35,7 +37,7 @@ class SecurityConfig {
     fun passwordEncoder(): PasswordEncoder {
 
         return BCryptPasswordEncoder()
-        
+
     }
 
 }
