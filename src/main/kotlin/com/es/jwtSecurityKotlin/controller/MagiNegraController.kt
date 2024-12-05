@@ -11,7 +11,7 @@ class MagiNegraController {
 
     @GetMapping("/magia_negra")
     fun getMagiaNegra () : String {
-        return "Aaaaaaahhhh nunca debiste entrar aquí!!!! \uD83E\uDD75"
+        return "Aaaaaahhhh nunca debiste entrar aquí!!!! \uD83E\uDD75"
     }
 
 
